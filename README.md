@@ -6,3 +6,6 @@ Nilai BMI yang tampil sebagai pembanding nilai Ideal antara berat badan hasil da
 
 
 Bagi yang ingin menggunakan Aplikasi sederhana ini, silakan bebas untuk di salin dan modifikasi :)
+
+# Demo
+https://beratbadan.papooa.com

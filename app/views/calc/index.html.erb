@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="jumbotron">
+    <h2><center>Kalkulator Berat Badan Ideal<br /> Berdasarkan Tinggi Badan</center></h2> <p></p>
+
+    <div class = "form-group">
+      <%= form_for :calc, url: { action: :new }, method: :get do |f|   %>
+        <label for="tinggi">Tinggi Badan (cm):</label>
+        <%= number_field_tag :tinggi, params[:tinggi], required: true, class: 'form-control' %><br />
+
+        <label for="jk">Jenis kelamain :</label>
+        <%= select_tag :gender, options_for_select([['Pria', :pria], ['Wanita', :wanita]], params[:gender]), class: 'form-control' %> <br />
+        <%= f.submit 'Hitung', class: 'form-control btn-primary' %>
+      <% end %>
+
+    </div>
+
+
+  </div>
+
+  <div class="jumbotron">
+        <% unless @result.nil? %>
+          <% if params[:tinggi].to_i < 145 %>
+            <h3><center>Maaf, untuk menggunakan aplikasi ini minimal tinggi badan kamu harus <strong>145 cm</strong>. Terimakasih</center></h1><p></p> 
+          <% else %>
+            <h1><center><%= @result %> kg</center></h1> 
+            <h3><center>Nilai Ideal BMI = <%= @bmi.round(1) %></center></h1><p></p> 
+            <table class='table'>
+              <thead>
+                <tr>
+                  <th>BMI</th>
+                  <th>Status Berat Badan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class='warning'>
+                  <td>Kurang dari 18.5</td>
+                  <td>Kekurangan berat badan</td>
+                </tr>
+                <tr class='success'>
+                  <td>18.5 - 24.9</td>
+                  <td>Normal (ideal)</td>
+                </tr>
+                <tr class='warning'>
+                  <td>25.0 - 29.9</td>
+                  <td>Kelebihan berat badan</td>
+                </tr>
+                <tr class='danger'>
+                  <td>30.0 atau lebih</td>
+                  <td>Kegemukan (obesitas)</td>
+                </tr>
+              </tbody>
+
+            </table>
+
+            <div>
+              <p><h6>***Perhitungan berdasarkan rumus Broca</h6></label></p> 
+              <p><h6>***Nilai BMI sebagai pembanding nilai Ideal antara hasil Broca dan BMI</h6></label></p> 
+            </div>
+          <% end %>
+        <% end %>
+  </div>
+
+
+  <div class="powered">
+    <p><h6>Developed by <a href="https://papooa.com/" target="_blank">Papooa</a></h6></label></p> 
+  </div>
+
+</div>

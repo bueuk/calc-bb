@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplikasi penghitung berat badan ini dibuat berdasarkan rumus Broca
+Nilai BMI yang tampil sebagai pembanding nilai Ideal antara berat badan hasil dari perhitungan Borca dan BMI
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Bagi yang ingin menggunakan Aplikasi ini, silakan bebas untuk di salin dan modifikasi!!!

@@ -1,0 +1,16 @@
+<h2><center>Kalkulator Berat Badan Ideal<br /> <strong>"Metode Broca"</strong></center></h2> <p></p>
+
+<div class = "form-group">
+  <%= form_for :calc, url: { action: :broca }, method: :get do |f|   %>
+    <label for="tinggi">Tinggi Badan (cm):</label>
+    <%= number_field_tag :tinggi, params[:tinggi], required: true, class: 'form-control' %><br />
+
+    <label for="jk">Jenis kelamain :</label>
+    <%= select_tag :gender, options_for_select([['Pria', :pria], ['Wanita', :wanita]], params[:gender]), class: 'form-control' %> <br />
+    <%= f.submit 'Hitung', class: 'form-control btn-primary' %>
+  <% end %>
+  <p></p>
+  <%= render 'result_broca' %>
+
+</div>
+

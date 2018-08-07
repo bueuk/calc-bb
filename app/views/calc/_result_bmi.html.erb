@@ -1,8 +1,5 @@
 <div class="jumbotron" style="background-color:#CFD8DC;">
 <% unless @bmi.nil? %>
-  <% if params[:tinggi].to_i < 145 %>
-    <h3><center>Maaf, untuk menggunakan aplikasi ini minimal tinggi badan kamu harus <strong>145 cm</strong>. Terimakasih</center></h1><p></p> 
-  <% else %>
     <h3><center>Nilai BMI kamu adalah <strong>"<%= @bmi.round(1) %>"</strong></center></h3>
     <h3><center>Status berat badan kamu adalah <strong>"<%= @status_bb %>"</strong></center></h3><p></p> 
     <table class='table'>
@@ -33,6 +30,5 @@
 
     </table>
 
-  <% end %>
 <% end %>
 </div>

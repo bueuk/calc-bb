@@ -13,6 +13,9 @@ class CalcController < ApplicationController
 
   def bmi 
     @bmi = params[:berat_badan].to_f / ((params[:tinggi].to_f / 100) ** 2)
+
+    @berat_min = 18.5 * ((params[:tinggi].to_f / 100) ** 2)
+    @berat_max = 24.9 * ((params[:tinggi].to_f / 100) ** 2)
     
     if @bmi >= 30.0 
       @status_bb = 'Kegemukan (Obesitas)'

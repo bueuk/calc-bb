@@ -1,7 +1,12 @@
 <div class="jumbotron" style="background-color:#CFD8DC;">
 <% unless @bmi.nil? %>
-    <h3><center>Nilai BMI kamu adalah <strong>"<%= @bmi.round(1) %>"</strong></center></h3>
-    <h3><center>Status berat badan kamu adalah <strong>"<%= @status_bb %>"</strong></center></h3><p></p> 
+  <center>
+    <h3>Nilai BMI kamu adalah <strong>"<%= @bmi.round(1) %>"</strong></h3>
+    Status berat badan kamu adalah <strong>"<%= @status_bb %>"</strong></br> 
+    Perkiraan berat ideal <strong>minimal</strong> adalah <strong>"<%= @berat_min.round(1) %> kg"</strong></br>
+    Perkiraan berat ideal <strong>maximal</strong> adalah <strong>"<%= @berat_max.round(1) %> kg"</strong></br>
+  </center>
+  <p></p>
     <table class='table'>
       <thead>
         <tr>

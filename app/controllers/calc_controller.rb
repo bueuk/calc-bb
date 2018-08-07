@@ -18,13 +18,13 @@ class CalcController < ApplicationController
     @berat_max = 24.9 * ((params[:tinggi].to_f / 100) ** 2)
     
     if @bmi >= 30.0 
-      @status_bb = 'Kegemukan (Obesitas)'
+      @status_bb = '<font color="#ff3300">Kegemukan (Obesitas)</font>'
     elsif @bmi >= 25.0
-      @status_bb = 'Kelebihan berat badan'
+      @status_bb = '<font color="#ff704d">Kelebihan berat badan</font>'
     elsif @bmi >= 18.5
-      @status_bb = 'Normal (Ideal)'
+      @status_bb = '<font color="#269900">Normal (Ideal)</font>'
     else
-      @status_bb = 'Kurus / Kekurang berat badan'
+      @status_bb = '<font color="#ffffcc">Kurus</font>'
     end
 
     render :index

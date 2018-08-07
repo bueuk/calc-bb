@@ -2,7 +2,7 @@
 <% unless @bmi.nil? %>
   <center>
     <h3>Nilai BMI kamu adalah <strong>"<%= @bmi.round(1) %>"</strong></h3>
-    Status berat badan kamu adalah <strong>"<%= @status_bb %>"</strong></br> 
+    Status berat badan kamu adalah <strong><%=raw @status_bb.html_safe %></strong></br> 
     Perkiraan berat ideal <strong>minimal</strong> adalah <strong>"<%= @berat_min.round(1) %> kg"</strong></br>
     Perkiraan berat ideal <strong>maximal</strong> adalah <strong>"<%= @berat_max.round(1) %> kg"</strong></br>
   </center>

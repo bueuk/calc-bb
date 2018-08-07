@@ -5,7 +5,7 @@
     <label for="tinggi">Tinggi Badan (cm):</label>
     <%= number_field_tag :tinggi, params[:tinggi], required: true, class: 'form-control' %><br />
 
-    <label for="jk">Jenis kelamain :</label>
+    <label for="jk">Jenis kelamin :</label>
     <%= select_tag :gender, options_for_select([['Pria', :pria], ['Wanita', :wanita]], params[:gender]), class: 'form-control' %> <br />
     <%= f.submit 'Hitung', class: 'form-control btn-primary' %>
   <% end %>

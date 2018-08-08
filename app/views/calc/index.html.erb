@@ -6,18 +6,18 @@
       <div class="navbar-header">
         <div class="navbar-brand">Pilih Kalkulator</div>
       </div>
-      <li class="active"><a data-toggle="tab" href="#broca">Broca</a></li>
-      <li ><a data-toggle="tab" href="#bmi">BMI</a></li>
-      <li ><a data-toggle="tab" href="#kalori">Kalori</a></li>
+      <li class="active"><a data-toggle="tab" href="#bmi">BMI</a></li>
+      <li><a data-toggle="tab" href="#broca">Broca</a></li>
+      <li><a data-toggle="tab" href="#kalori">Kalori</a></li>
     </ul>
 
     <div class="tab-content">
-      <div id="broca" class="tab-pane fade in active">
-        <%= render 'broca' %>
+      <div id="bmi" class="tab-pane fade in active">
+        <%= render 'bmi' %>
       </div>
 
-      <div id="bmi" class="tab-pane fade">
-        <%= render 'bmi' %>
+      <div id="broca" class="tab-pane fade">
+        <%= render 'broca' %>
       </div>
 
       <div id="kalori" class="tab-pane fade">

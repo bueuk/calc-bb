@@ -3,15 +3,6 @@ class CalcController < ApplicationController
   def index
   end
 
-  def broca 
-    if params[:gender] == 'pria'
-      @result = ((params[:tinggi].to_f - 100) - ((params[:tinggi].to_f - 100) * 0.1)).ceil
-    else
-      @result = ((params[:tinggi].to_f - 100) - ((params[:tinggi].to_f - 100) * 0.15)).ceil
-    end
-    render :index
-  end
-
   def bmi 
     @bmi = (params[:berat_badan].to_f / ((params[:tinggi].to_f / 100) ** 2)).round(1)
 
@@ -28,6 +19,15 @@ class CalcController < ApplicationController
       @status_bb = '<font color="#ffffcc">Kurus</font>'
     end
 
+    render :index
+  end
+
+  def broca 
+    if params[:gender] == 'pria'
+      @result = ((params[:tinggi].to_f - 100) - ((params[:tinggi].to_f - 100) * 0.1)).ceil
+    else
+      @result = ((params[:tinggi].to_f - 100) - ((params[:tinggi].to_f - 100) * 0.15)).ceil
+    end
     render :index
   end
 

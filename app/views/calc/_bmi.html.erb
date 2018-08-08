@@ -3,10 +3,10 @@
 <div class = "form-group">
   <%= form_for :calc, url: { action: :bmi }, method: :get do |f|   %>
     <label for="tinggi">Tinggi Badan (cm):</label>
-    <%= number_field_tag :tinggi, params[:tinggi], required: true, class: 'form-control' %><br />
+    <%= number_field_tag :tinggi, params[:tinggi], step: 0.1, required: true, class: 'form-control' %><br />
     
     <label for="berat_badan">Berat Badan (kg)</label>
-    <%= number_field_tag :berat_badan, params[:berat_badan], required: true, class: 'form-control' %><br />
+    <%= number_field_tag :berat_badan, params[:berat_badan], step: 0.1, required: true, class: 'form-control' %><br />
 
     <%= f.submit 'Hitung', class: 'form-control btn-primary' %>
   <% end %>

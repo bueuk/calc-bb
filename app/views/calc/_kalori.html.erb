@@ -1,0 +1,34 @@
+<h2><center>Kalkulator Kebutuhan Kalori Harian (AKG)<br /></center></h2> <p></p>
+
+<div class = "form-group">
+  <%= form_for :calc, url: { action: :kalori }, method: :get do |f|   %>
+
+    <label for="jk">Jenis kelamin</label>
+    <%= select_tag :gender, options_for_select([['Pria', :pria], ['Wanita', :wanita]], params[:gender]), class: 'form-control' %> <br />
+
+    <label for="berat_badan">Berat Badan (kg)</label>
+    <%= number_field_tag :berat_badan, params[:berat_badan], step: 0.1, required: true, class: 'form-control' %><br />
+
+    <label for="tinggi">Tinggi Badan (cm)</label>
+    <%= number_field_tag :tinggi, params[:tinggi], step: 0.1, required: true, class: 'form-control' %><br />
+
+    <label for="usia">Usia</label>
+    <%= number_field_tag :usia, params[:usia], required: true, class: 'form-control' %><br />
+
+    <label for="tingkat_aktivitas">Tingkat Aktivitas</label>
+    <%= select_tag :tingkat_aktivitas, options_for_select([
+      ['Jarang sekali - Tidak berolahraga sama sekali atau jarang dalam seminggu', :pasif], 
+      ['Aktivitas ringan - Berolahraga 1-3 kali seminggu', :ringan],
+      ['Aktivitas sedang - Berolahraga 3-5 kali seminggu', :sedang],
+      ['Aktivitas berat - Berolahraga 5-6 kali seminggu', :berat],
+      ['Aktivitas sangat berat - Berolahraga sekitar 2 kali dalam sehari, termasuk latihan fisik ekstra berat', :sangat_berat],
+    ], params[:tingkat_aktivitas]), class: 'form-control' %> <br />
+    
+
+    <%= f.submit 'Hitung', class: 'form-control btn-primary' %>
+  <% end %>
+  <p></p>
+  <%= render 'result_kalori' %>
+
+</div>
+

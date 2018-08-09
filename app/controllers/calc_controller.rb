@@ -49,7 +49,7 @@ class CalcController < ApplicationController
       @akg = (@bmr * 1.55).ceil
     when 'berat'
       @akg = (@bmr * 1.725).ceil
-    when 'sangat_berat'
+    else
       @akg = (@bmr * 1.9).ceil
     end
 
